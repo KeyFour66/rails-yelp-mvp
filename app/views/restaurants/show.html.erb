@@ -4,6 +4,7 @@
 <p><%= @restaurant.address %></p>
 
 <% @reviews.each do |review| %>
+ <h3>Avis</h3>
   <ul>
     <li><%= link_to review.content, restaurant_reviews_path(@restaurant) %></li>
   <li><%= review.rating %></li>
