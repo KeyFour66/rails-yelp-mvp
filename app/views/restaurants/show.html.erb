@@ -1,0 +1,16 @@
+<h1> Restaurant Details </h1>
+
+<h2><%= @restaurant.name %></h2>
+<p><%= @restaurant.address %></p>
+
+<%= link_to restaurants_path do %>
+  <i class="fa fa-history"></i> Back to list
+<% end %>
+
+<%= link_to "Add a Review", new_restaurant_review_path(@restaurant) %>
+
+<% @reviews.each do |review| %>
+  <h2><%= link_to review.content, restaurant_reviews_path(@restaurant) %></h2>
+  <p><%= review.rating %></p>
+<% end %>
+
